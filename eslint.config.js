@@ -10,7 +10,8 @@ module.exports = [
             globals: {
                 window: 'readonly',
                 document: 'readonly',
-                console: 'readonly'
+                console: 'readonly',
+                fetch: 'readonly'
             }
         }
     },
