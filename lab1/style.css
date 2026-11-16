@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+
+.header {
+    margin: 0;
+    padding: 40px 60px 20px;
+}
+
+.header__title {
+    margin: 0 0 40px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    margin-right: 25px;
+    text-decoration: none;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 22px;
+    color: black;
+}
+
+.nav__link:hover {
+    color: tomato;
+}
+
+.main {
+    margin: 0;
+    padding: 20px 60px 40px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section__title {
+    margin: 10px 0 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.section__text {
+    max-width: 900px;
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.about__image {
+    display: block;
+    width: 700px;
+    height: auto;
+}
+
+.advantages {
+    margin: 0;
+    padding-left: 0;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.top-table {
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+.top-table th,
+.top-table td {
+    padding: 15px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.top-table th {
+    font-weight: 700;
+}
+
+.footer {
+    margin: 0;
+    padding: 30px 40px;
+    background-color: black;
+    color: white;
+}
+
+.footer__text {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.footer__text:last-child {
+    margin-bottom: 0;
+}
+
+.footer__link {
+    text-decoration: none;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 22px;
+    color: white;
+}
+
+.footer__link:hover {
+    color: tomato;
+}

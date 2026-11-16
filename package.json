@@ -1,0 +1,16 @@
+{
+    "name": "food-construct",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Лабораторные работы по курсу «Основы веб-технологий»",
+    "scripts": {
+        "lint:js": "eslint .",
+        "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**\"",
+        "lint": "npm run lint:js && npm run lint:html"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.0.0",
+        "eslint": "^9.0.0",
+        "htmlhint": "^1.1.4"
+    }
+}
