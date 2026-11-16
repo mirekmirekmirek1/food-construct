@@ -1,0 +1,273 @@
+.menu-section {
+    margin-bottom: 40px;
+}
+
+.menu-section__title {
+    margin: 10px 0 20px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters__button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 18px;
+    color: tomato;
+    cursor: pointer;
+}
+
+.filters__button:hover {
+    background-color: #f1eee9;
+}
+
+.filters__button.active {
+    background-color: rgba(255, 99, 71, 0.2);
+}
+
+.dishes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background-color: white;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    cursor: pointer;
+}
+
+.dish[hidden] {
+    display: none;
+}
+
+.dish:hover,
+.dish--selected {
+    border: 2px solid tomato;
+}
+
+.dish:hover .dish__button {
+    background-color: tomato;
+    color: white;
+}
+
+.dish__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.dish__price {
+    margin: 20px 0 5px;
+    font-size: 22px;
+}
+
+.dish__name {
+    flex-grow: 1;
+    margin: 0 0 15px;
+    font-size: 18px;
+}
+
+.dish__count {
+    margin: 0;
+    color: gray;
+}
+
+.dish__button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1eee9;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}
+
+.order {
+    padding: 20px 60px 60px;
+}
+
+.order__title {
+    margin: 0 0 50px;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.order-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.order-form__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.order-form__subtitle {
+    margin: 0 0 30px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.order-summary {
+    margin-bottom: 40px;
+}
+
+.order-summary__empty {
+    margin: 0;
+    font-size: 20px;
+}
+
+.order-summary__item,
+.order-summary__total {
+    margin-bottom: 25px;
+}
+
+.order-summary__category {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-summary__dish {
+    margin: 0;
+    font-size: 20px;
+}
+
+.order-summary__price {
+    margin: 0;
+    font-size: 26px;
+}
+
+.order-form__label {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.order-form__field {
+    width: 100%;
+    max-width: 360px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 16px;
+}
+
+.order-form__textarea {
+    height: 145px;
+    padding: 10px;
+    resize: vertical;
+}
+
+.order-form__check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.order-form__check input {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.order-form__hint {
+    margin: -12px 0 20px;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.order-form__fieldset {
+    margin: 0 0 10px;
+    padding: 0;
+    border: none;
+}
+
+.order-form__legend {
+    margin-bottom: 12px;
+    padding: 0;
+    font-size: 20px;
+}
+
+.order-form__buttons {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.order-form__button {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: white;
+    font-family: "Golos Text", Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+}
+
+.order-form__button:hover {
+    border-color: tomato;
+    background-color: tomato;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .dishes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-section__title {
+        text-align: center;
+    }
+
+    .dishes {
+        grid-template-columns: 1fr;
+    }
+
+    .order {
+        padding: 20px;
+    }
+
+    .order-form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .order-form__field,
+    .order-form__buttons {
+        max-width: none;
+    }
+}
