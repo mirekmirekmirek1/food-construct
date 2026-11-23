@@ -11,7 +11,10 @@ module.exports = [
                 window: 'readonly',
                 document: 'readonly',
                 console: 'readonly',
-                fetch: 'readonly'
+                fetch: 'readonly',
+                localStorage: 'readonly',
+                FormData: 'readonly',
+                setTimeout: 'readonly'
             }
         }
     },
