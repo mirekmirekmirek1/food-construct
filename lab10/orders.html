@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы - Food Construct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunch.css">
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Food Construct</h1>
+        <nav class="nav">
+            <a class="nav__link" href="index.html">О нас</a>
+            <a class="nav__link" href="lunch.html">Собрать ланч</a>
+            <a class="nav__link" href="order.html">Оформить заказ</a>
+            <a class="nav__link active" href="orders.html">Заказы</a>
+            <a class="nav__link" href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="menu-section">
+            <h2 class="menu-section__title">История заказов</h2>
+            <p class="orders-message" id="orders-message">Загрузка заказов...</p>
+            <div class="orders-wrapper" id="orders-wrapper" hidden>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Дата оформления</th>
+                            <th>Состав заказа</th>
+                            <th>Стоимость</th>
+                            <th>Время доставки</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-list"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Просмотр заказа -->
+    <dialog class="modal" id="view-modal" aria-labelledby="view-title">
+        <div class="modal__header">
+            <h2 class="modal__title" id="view-title">Просмотр заказа</h2>
+            <button class="modal__close" type="button" data-close aria-label="Закрыть"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal__body" id="view-body"></div>
+        <div class="modal__footer">
+            <button class="modal__button" type="button" data-close>Ок</button>
+        </div>
+    </dialog>
+
+    <!-- Редактирование заказа -->
+    <dialog class="modal" id="edit-modal" aria-labelledby="edit-title">
+        <form class="modal__form" id="edit-form">
+            <div class="modal__header">
+                <h2 class="modal__title" id="edit-title">Редактирование заказа</h2>
+                <button class="modal__close" type="button" data-close aria-label="Закрыть"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal__body">
+                <div class="modal__row">
+                    <span>Дата оформления</span>
+                    <span id="edit-date"></span>
+                </div>
+
+                <h3 class="modal__subtitle">Доставка</h3>
+                <div class="modal__row">
+                    <label for="edit-name">Имя получателя</label>
+                    <input class="modal__field" type="text" id="edit-name" name="full_name" required>
+                </div>
+                <div class="modal__row">
+                    <label for="edit-address">Адрес доставки</label>
+                    <input class="modal__field" type="text" id="edit-address" name="delivery_address" required>
+                </div>
+                <div class="modal__row">
+                    <span>Тип доставки</span>
+                    <div class="modal__radios">
+                        <label><input type="radio" name="delivery_type" value="now"> Как можно скорее</label>
+                        <label><input type="radio" name="delivery_type" value="by_time"> Ко времени</label>
+                    </div>
+                </div>
+                <div class="modal__row">
+                    <label for="edit-time">Время доставки</label>
+                    <input class="modal__field" type="time" id="edit-time" name="delivery_time" min="07:00" max="23:00" step="300">
+                </div>
+                <div class="modal__row">
+                    <label for="edit-phone">Телефон</label>
+                    <input class="modal__field" type="tel" id="edit-phone" name="phone" required>
+                </div>
+                <div class="modal__row">
+                    <label for="edit-email">Email</label>
+                    <input class="modal__field" type="email" id="edit-email" name="email" required>
+                </div>
+
+                <h3 class="modal__subtitle"><label for="edit-comment">Комментарий</label></h3>
+                <textarea class="modal__field modal__textarea" id="edit-comment" name="comment" rows="3"></textarea>
+
+                <h3 class="modal__subtitle">Состав заказа</h3>
+                <div id="edit-dishes"></div>
+                <p class="modal__total" id="edit-total"></p>
+            </div>
+            <div class="modal__footer">
+                <button class="modal__button" type="button" data-close>Отмена</button>
+                <button class="modal__button modal__button--save" type="submit">Сохранить</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Удаление заказа -->
+    <dialog class="modal modal--small" id="delete-modal" aria-labelledby="delete-title">
+        <div class="modal__header">
+            <h2 class="modal__title" id="delete-title">Удаление заказа</h2>
+            <button class="modal__close" type="button" data-close aria-label="Закрыть"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal__body">
+            <p class="modal__text">Вы уверены, что хотите удалить заказ?</p>
+        </div>
+        <div class="modal__footer">
+            <button class="modal__button" type="button" data-close>Отмена</button>
+            <button class="modal__button modal__button--delete" type="button" id="delete-confirm">Да</button>
+        </div>
+    </dialog>
+
+    <footer class="footer" id="contacts">
+        <p class="footer__text">
+            Позвонить нам <a class="footer__link" href="tel:+70000000000">+7-000-000-00-00</a>
+        </p>
+        <p class="footer__text">
+            Написать нам <a class="footer__link" href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a>
+        </p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/check.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Свои стили поверх Bootstrap: шрифт, фирменный цвет и пара деталей. */
+:root {
+    --accent: tomato;
+    --accent-dark: #e5533a;
+}
+
+body {
+    font-family: "Golos Text", Arial, sans-serif;
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.btn-accent {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-accent:hover,
+.btn-accent:focus-visible {
+    border-color: var(--accent-dark);
+    background-color: var(--accent-dark);
+    color: white;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: var(--accent);
+}
+
+.hero {
+    background: linear-gradient(135deg, #fff5f2 0%, #ffffff 60%);
+}
+
+.advantage-icon {
+    font-size: 40px;
+    color: var(--accent);
+}
+
+.carousel-image {
+    height: 420px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 40px 20px 45px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.cta {
+    background: linear-gradient(135deg, tomato 0%, #d9452b 100%);
+}
+
+@media (max-width: 576px) {
+    .carousel-image {
+        height: 300px;
+    }
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #fff0ec;
+    color: black;
+}
+
+.accordion-button:focus,
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.25rem rgba(255, 99, 71, 0.25);
+}

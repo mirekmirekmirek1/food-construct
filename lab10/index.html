@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - доставка бизнес-ланчей</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Навигация: компонент Navbar, на узких экранах сворачивается в кнопку-«бургер» -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">Food Construct</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lunch.html">Собрать ланч</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Заказы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero: название, слоган и главная кнопка -->
+        <section class="hero py-5">
+            <div class="container py-lg-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <span class="badge rounded-pill text-bg-light mb-3 px-3 py-2">Доставка по Москве с 7:00 до 23:00</span>
+                        <h1 class="display-4 fw-bold mb-3">Горячий бизнес-ланч к вашему столу</h1>
+                        <p class="lead mb-4">
+                            Соберите обед из супа, горячего, салата, напитка и десерта.
+                            Мы приготовим его из свежих продуктов и привезем точно ко времени.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                            <a class="btn btn-accent btn-lg px-4" href="lunch.html">Собрать ланч</a>
+                            <a class="btn btn-outline-dark btn-lg px-4" href="#advantages">Почему мы</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid rounded-4 shadow" src="../images/lunch.jpg"
+                             alt="Разные блюда в контейнерах для доставки" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Преимущества: сетка карточек (Grid + Card) -->
+        <section class="py-5" id="advantages">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-2">Почему выбирают Food Construct</h2>
+                <p class="text-secondary text-center mb-5">Мы делаем так, чтобы обед был самой спокойной частью рабочего дня</p>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-3">
+                            <div class="card-body">
+                                <i class="bi bi-clock advantage-icon"></i>
+                                <h3 class="card-title h5 mt-3">Точно ко времени</h3>
+                                <p class="card-text text-secondary">Привозим заказ к назначенному времени без опозданий.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-3">
+                            <div class="card-body">
+                                <i class="bi bi-box-seam advantage-icon"></i>
+                                <h3 class="card-title h5 mt-3">Удобная упаковка</h3>
+                                <p class="card-text text-secondary">Надежные контейнеры сохраняют блюда горячими. Упаковка бесплатно.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-3">
+                            <div class="card-body">
+                                <i class="bi bi-basket advantage-icon"></i>
+                                <h3 class="card-title h5 mt-3">Свежие продукты</h3>
+                                <p class="card-text text-secondary">Готовим каждый день, ничего не замораживаем заранее.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm text-center p-3">
+                            <div class="card-body">
+                                <i class="bi bi-puzzle advantage-icon"></i>
+                                <h3 class="card-title h5 mt-3">Свой набор блюд</h3>
+                                <p class="card-text text-secondary">Пять вариантов комбо: собирайте ланч под свой аппетит.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные блюда: компонент Carousel -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5">Популярные блюда недели</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div id="dishes-carousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#dishes-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+                                <button type="button" data-bs-target="#dishes-carousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+                                <button type="button" data-bs-target="#dishes-carousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="../images/menu/main_course/lasagna.jpg" class="d-block w-100 carousel-image" alt="Лазанья" width="480" height="480">
+                                    <div class="carousel-caption">
+                                        <h3 class="h5">Лазанья</h3>
+                                        <p class="mb-0">385₽ · 310 г</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../images/menu/soups/tomyum.jpg" class="d-block w-100 carousel-image" alt="Том ям с креветками" width="480" height="480">
+                                    <div class="carousel-caption">
+                                        <h3 class="h5">Том ям с креветками</h3>
+                                        <p class="mb-0">650₽ · 500 г</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../images/menu/main_course/friedpotatoeswithmushrooms1.jpg" class="d-block w-100 carousel-image" alt="Жареная картошка с грибами" width="480" height="480">
+                                    <div class="carousel-caption">
+                                        <h3 class="h5">Жареная картошка с грибами</h3>
+                                        <p class="mb-0">150₽ · 250 г</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#dishes-carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#dishes-carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Следующий</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Призыв к действию (CTA) -->
+        <section class="py-5">
+            <div class="container">
+                <div class="cta rounded-4 p-4 p-md-5 text-center text-white">
+                    <h2 class="fw-bold mb-3">Проголодались? Соберите ланч за пару минут</h2>
+                    <p class="lead mb-4">Выберите блюда, укажите адрес и время - остальное мы сделаем сами.</p>
+                    <a class="btn btn-light btn-lg px-5" href="lunch.html">Собрать ланч</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Частые вопросы: компонент Accordion -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5">Частые вопросы</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faq">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="true" aria-controls="faq-1">
+                                        Сколько стоит доставка?
+                                    </button>
+                                </h3>
+                                <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                                    <div class="accordion-body">Доставка по Москве бесплатная, вы платите только за блюда.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
+                                        Какие комбо можно заказать?
+                                    </button>
+                                </h3>
+                                <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                    <div class="accordion-body">
+                                        Суп, главное блюдо, салат и напиток или любое из сокращенных сочетаний с напитком.
+                                        Десерт можно добавить к любому комбо.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
+                                        Можно ли изменить заказ после оформления?
+                                    </button>
+                                </h3>
+                                <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                    <div class="accordion-body">
+                                        Да, на странице «Заказы» можно поменять адрес, время доставки и контакты или отменить заказ.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Обратная связь и контакты -->
+        <section class="py-5 bg-light" id="contacts">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5">Свяжитесь с нами</h2>
+                <div class="row g-5">
+                    <div class="col-lg-7">
+                        <form class="feedback-form row g-3" id="feedback-form" novalidate>
+                            <div class="col-md-6">
+                                <label class="form-label" for="feedback-name">Имя</label>
+                                <input class="form-control" type="text" id="feedback-name" name="name" required>
+                                <div class="invalid-feedback">Укажите, как к вам обращаться</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="feedback-email">Email</label>
+                                <input class="form-control" type="email" id="feedback-email" name="email" required>
+                                <div class="invalid-feedback">Введите корректный email</div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="feedback-topic">Тема</label>
+                                <select class="form-select" id="feedback-topic" name="topic">
+                                    <option value="question">Вопрос о заказе</option>
+                                    <option value="corporate">Корпоративное питание</option>
+                                    <option value="review">Отзыв</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="feedback-message">Сообщение</label>
+                                <textarea class="form-control" id="feedback-message" name="message" rows="4" required></textarea>
+                                <div class="invalid-feedback">Напишите сообщение</div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-accent btn-lg px-4" type="submit">Отправить</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="alert alert-success mb-0" id="feedback-success" role="status" hidden>
+                                    Спасибо! Мы ответим вам в течение рабочего дня.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <ul class="list-group list-group-flush rounded-4 shadow-sm">
+                            <li class="list-group-item p-3">
+                                <i class="bi bi-telephone me-2 text-accent"></i>
+                                <a class="link-dark" href="tel:+70000000000">+7-000-000-00-00</a>
+                            </li>
+                            <li class="list-group-item p-3">
+                                <i class="bi bi-envelope me-2 text-accent"></i>
+                                <a class="link-dark" href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a>
+                            </li>
+                            <li class="list-group-item p-3">
+                                <i class="bi bi-geo-alt me-2 text-accent"></i>
+                                Москва, ул. Большая Семёновская, 38
+                            </li>
+                            <li class="list-group-item p-3">
+                                <i class="bi bi-clock me-2 text-accent"></i>
+                                Ежедневно с 7:00 до 23:00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+            <p class="mb-0">© Food Construct</p>
+            <p class="mb-0">Позвонить нам <a class="link-light" href="tel:+70000000000">+7-000-000-00-00</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+</html>
