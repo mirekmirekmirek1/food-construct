@@ -51,7 +51,7 @@
 .dish__name {
     flex-grow: 1;
     margin: 0 0 15px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .dish__count {

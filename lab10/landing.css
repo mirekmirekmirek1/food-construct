@@ -4,6 +4,12 @@
     --accent-dark: #e5533a;
 }
 
+/* Навбар закреплен сверху (sticky-top), поэтому при переходе по якорям
+   (#advantages, #contacts) отступаем на его высоту, чтобы он не закрывал заголовок. */
+html {
+    scroll-padding-top: 80px;
+}
+
 body {
     font-family: "Golos Text", Arial, sans-serif;
 }
@@ -12,17 +18,19 @@ body {
     color: var(--accent);
 }
 
+/* Своя кнопка через переменные Bootstrap: так цвет сохраняется во всех
+   состояниях (hover, focus, нажатие), а не только в обычном и при наведении. */
 .btn-accent {
-    border-color: var(--accent);
-    background-color: var(--accent);
-    color: white;
-}
-
-.btn-accent:hover,
-.btn-accent:focus-visible {
-    border-color: var(--accent-dark);
-    background-color: var(--accent-dark);
-    color: white;
+    --bs-btn-color: white;
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: var(--accent-dark);
+    --bs-btn-hover-border-color: var(--accent-dark);
+    --bs-btn-active-color: white;
+    --bs-btn-active-bg: var(--accent-dark);
+    --bs-btn-active-border-color: var(--accent-dark);
+    --bs-btn-focus-shadow-rgb: 255, 99, 71;
 }
 
 .navbar .nav-link.active,
