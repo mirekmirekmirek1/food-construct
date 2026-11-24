@@ -51,8 +51,8 @@ function renderOrder() {
     renderSummary();
 }
 
-function removeDish(id) {
-    const category = CATEGORIES.find((item) => orderDishes[item] && orderDishes[item].id === id);
+function removeDish(keyword) {
+    const category = CATEGORIES.find((item) => orderDishes[item] && orderDishes[item].keyword === keyword);
     if (!category) {
         return;
     }
@@ -145,7 +145,7 @@ document.getElementById('order-dishes').addEventListener('click', (event) => {
     if (!button) {
         return;
     }
-    removeDish(Number(button.closest('.dish').dataset.id));
+    removeDish(button.closest('.dish').dataset.dish);
 });
 
 form.querySelectorAll('input[name="delivery_type"]').forEach((radio) => {

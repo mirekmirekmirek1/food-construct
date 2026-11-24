@@ -4,7 +4,7 @@
 function createDishCard(dish, buttonText) {
     const card = document.createElement('div');
     card.className = 'dish';
-    card.dataset.id = dish.id;
+    card.dataset.dish = dish.keyword;
     card.dataset.kind = dish.kind;
 
     const image = document.createElement('img');

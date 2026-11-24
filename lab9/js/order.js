@@ -31,22 +31,24 @@ function updatePanel() {
     link.classList.toggle('checkout-panel__link--disabled', !ready);
 }
 
-function highlightCard(category, id) {
+function highlightCard(category, keyword) {
     const container = document.querySelector(`.dishes[data-category="${category}"]`);
 
     container.querySelectorAll('.dish').forEach((card) => {
-        card.classList.toggle('dish--selected', Number(card.dataset.id) === id);
+        card.classList.toggle('dish--selected', card.dataset.dish === keyword);
     });
 }
 
-function selectDish(id) {
-    const dish = dishes.find((item) => item.id === id);
+// Блюдо ищем в массиве по data-dish (keyword), как в ЛР4.
+// В localStorage потом сохраняется его id.
+function selectDish(keyword) {
+    const dish = dishes.find((item) => item.keyword === keyword);
     if (!dish) {
         return;
     }
 
     selectedDishes[dish.category] = dish;
-    highlightCard(dish.category, dish.id);
+    highlightCard(dish.category, dish.keyword);
     saveOrder(selectedDishes);
     updatePanel();
 }
@@ -58,7 +60,7 @@ function restoreOrder() {
     CATEGORIES.forEach((category) => {
         const dish = dishes.find((item) => item.id === saved[category]);
         selectedDishes[category] = dish || null;
-        highlightCard(category, dish ? dish.id : null);
+        highlightCard(category, dish ? dish.keyword : null);
     });
 
     updatePanel();
@@ -70,7 +72,7 @@ document.querySelectorAll('.dishes').forEach((container) => {
         if (!button) {
             return;
         }
-        selectDish(Number(button.closest('.dish').dataset.id));
+        selectDish(button.closest('.dish').dataset.dish);
     });
 });
 

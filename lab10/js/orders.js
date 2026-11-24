@@ -211,8 +211,15 @@ function getCurrentTime() {
 async function saveOrder(event) {
     event.preventDefault();
 
+    const order = findOrder(currentOrderId);
     const timeInput = editForm.elements.delivery_time;
-    if (!timeInput.disabled && timeInput.value < getCurrentTime()) {
+
+    // Время проверяем и отправляем, только если его поменяли (или включили доставку ко времени).
+    // Иначе старый заказ на 17:00 нельзя было бы сохранить вечером, даже поменяв одно имя.
+    const timeChanged = !timeInput.disabled
+        && (order.delivery_type !== 'by_time' || timeInput.value !== formatTime(order.delivery_time));
+
+    if (timeChanged && timeInput.value < getCurrentTime()) {
         showNotification('Время доставки не может быть раньше текущего времени');
         return;
     }
@@ -220,6 +227,9 @@ async function saveOrder(event) {
     // В FormData попадут только доступные для редактирования поля формы.
     // Отключенное поле времени (доставка «как можно скорее») не отправляется.
     const data = new FormData(editForm);
+    if (!timeChanged) {
+        data.delete('delivery_time');
+    }
     const saveButton = editForm.querySelector('button[type="submit"]');
     saveButton.disabled = true;
 
